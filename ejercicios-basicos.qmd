@@ -1,0 +1,285 @@
+---
+title: Ejercicios básicos
+lang: es
+---
+
+:::{#exr-hola-mundo}
+Escribir el código LaTeX para generar el siguiente [documento](doc/ejercicio1.pdf), pero con la fecha actual.
+
+:::{.callout-note collapse="true"}
+## Ver documento
+{{< pdf doc/ejercicio1.pdf width=100% >}}
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```latex
+% CLASE
+\documentclass[a4paper,12pt]{article}
+% PREÁMBULO
+% Paquetes
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{spanish}
+
+% Título, autor y fecha
+\title{Hola Mundo}
+\author{Alfredo Sánchez Alberca}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\textbf{¡Hola Mundo!} Hoy empiezo a aprender \LaTeX.
+\end{document}
+```
+:::
+
+:::{#exr-articulo-breve}
+Escribir el código LaTeX para generar el siguiente [documento](doc/ejercicio2.pdf).
+
+:::{.callout-note collapse="true"}
+## Ver documento
+{{< pdf doc/ejercicio2.pdf width=100% >}}
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```latex
+% CLASE
+\documentclass[a4paper,12pt]{article}
+
+% PREÁMBULO
+% Paquetes
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{spanish}
+
+% Título, autor y fecha
+\title{Curso de \LaTeX}
+\author{María López \and Juan Sánchez}
+\date{}
+
+% CUERPO
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Introducción}
+
+LaTeX es un sistema de composición de textos, orientado especialmente a la creación de documentos científicos y técnicos que contengan fórmulas matemáticas.
+
+\subsection{Código abierto}
+
+LaTeX es un programa de \emph{código abierto} por lo que cualquier usuario puede modificar el código y adaptarlo a sus necesidades.
+
+\subsection{Distribuciones}
+
+Existen distribuciones de LaTeX para la mayoría de los sistemas operativos. Las más conocidas son TexLive, MikTex y MacTex.
+
+\section{Paquetes}
+
+Existen multitud de paquetes de macros en LaTeX para realizar diversas tareas desde gráficos hasta composición de partituras. El principal repositorio de paquetes es CRAN( \texttt{https://cran.r-project.org/})
+
+\end{document}
+```
+:::
+
+:::{#exr-listas-anidadas}
+Escribir el código LaTeX para generar el siguiente [documento](doc/ejercicio3.pdf).
+
+:::{.callout-note collapse="true"}
+## Ver documento
+{{< pdf doc/ejercicio3.pdf width=100% >}}
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```latex
+% CLASE
+\documentclass{article}
+
+% PREAMBULO
+\usepackage[spanish]{babel}
+
+% CUERPO
+\begin{document}
+\section{Contenidos del curso de \LaTeX}
+
+\begin{enumerate}
+  \item Instalación de \LaTeX.
+  \begin{enumerate}
+    \item Versión para Windows.
+    \item Versión para Mac.
+    \item Versión para Linux.
+  \end{enumerate}
+
+  \item Estructura de un documento.
+  \begin{enumerate}
+    \item Capítulos y secciones.
+    \item Formateo de texto.
+  \end{enumerate}
+  
+  \item Listas.
+  \begin{enumerate}
+    \item Enumeradas.
+    \item No numeradas.
+    \item Descriptivas.
+  \end{enumerate}
+  
+  \item Fórmulas matemáticas.
+  \begin{enumerate}
+    \item Subíndices y superíndices.
+    \item Operadores matemáticos.
+    \item Vectores y matrices.
+  \end{enumerate}
+\end{enumerate}
+\end{document}
+```
+:::
+
+:::{#exr-tablas-horario}
+Escribir el código LaTeX para generar el siguiente [documento](doc/ejercicio4.pdf).
+
+:::{.callout-note collapse="true"}
+## Ver documento
+{{< pdf doc/ejercicio4.pdf width=100% >}}
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```latex
+% CLASE
+\documentclass{article}
+
+% PREAMBULO
+\usepackage[spanish]{babel}
+
+% CUERPO
+\begin{document}
+
+\section*{Horarios}
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+ & lunes & martes & miércoles & jueves & viernes \\
+\hline
+9:30-10:30 & Matemáticas & Matemáticas & Física & Matemáticas & Física \\
+\hline
+10:30-11:30 & Química & Física & Química & Física & Química \\
+\hline
+11:30-12:30 & Física & & Matemáticas & Química & Matemáticas \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}
+```
+:::
+
+:::{#exr-imagenes-basico}
+Escribir el código LaTeX para generar el siguiente [documento](doc/ejercicio4.pdf).
+Las imágenes pueden descargarse desde la Wikipedia.
+
+:::{.callout-note collapse="true"}
+## Ver documento
+{{< pdf doc/ejercicio6.pdf width=100% >}}
+:::
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```latex
+% CLASE
+\documentclass{article}
+
+% PREAMBULO
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+
+% CUERPO
+\begin{document}
+
+El creador de \TeX\ fue Donald Knutt y el de \LaTeX\ Leslie Lamport.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=7cm]{img/Donald_Knuth.jpg}
+  \caption{Donald Knutt}
+  \label{fig:knutt}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[height=7cm]{img/Leslie_Lamport.jpg}
+  \caption{Leslie Lamport}
+  \label{fig:knutt}
+  \end{figure}
+
+\end{document}
+```
+:::
+
+:::{#exr-formulas-basicas}
+Escribir el código LaTeX para generar las siguientes fórmulas:
+
+a. $$\int_a^b x dx = \left.\frac{x^2}{2} \right|_a^b$$
+
+b. $$\frac{dy}{dx}=y'=\lim_{h \to 0}\frac{f(x+h)-f(x)}{h}$$
+
+c. $$\sum_n \frac{1}{n^s}=\prod_p \frac{1}{1-\frac{1}{p^s}}$$
+
+d. $$\nabla f(x,y,z) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)$$
+
+e. $$\frac{1+\frac{a}{b}}{1+\ln{\frac{\sqrt{b^2}}{1+\frac{1}{a}}}}$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+a. `$$\int_a^b x\,dx = \left.\frac{x^2}{2} \right|_a^b$$`
+
+b. `$$\frac{dy}{dx}=y'=\lim_{h \to 0}\frac{f(x+h)-f(x)}{h}$$`
+
+c. `\sum_n \frac{1}{n^s}=\prod_p \frac{1}{1-\frac{1}{p^s}}`
+
+d. `$$\nabla f(x,y,z) = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z}\right)$$`
+
+e. `$$\frac{1+\frac{a}{b}}{1+\ln{\frac{\sqrt{b^2}}{1+\frac{1}{a}}}}$$`
+:::
+
+:::{#exr-matrices-basicas}
+Escribir el código LaTeX para generar la siguiente expresión matricial: 
+
+$$
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \\
+a_{21} & a_{22} & \dots & a_{2m} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nm}
+\end{bmatrix}
+$$
+:::
+
+:::{.callout-tip collapse="true"}
+## Solución
+```TeX
+% PREÁMBULO
+\usepackage{amsmath}
+% CUERPO
+\begin{document}
+$$
+\begin{bmatrix}
+a_{11} & a_{12} & \dots & a_{1m} \newline
+a_{21} & a_{22} & \dots & a_{2m} \newline
+\vdots & \vdots & \ddots & \vdots \newline
+a_{n1} & a_{n2} & \dots & a_{nm}
+\end{bmatrix}
+$$
+\end{document}
+```
+:::
